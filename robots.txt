@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://namboolehighschool.ac.ug/sitemap.xml
+Sitemap: https://darwinsethan-oss.github.io/namboole-high-school/sitemap.xml
