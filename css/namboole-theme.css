@@ -1,0 +1,363 @@
+/* ============================================================
+   Namboole High School theme
+   A clean, contemporary school look over the
+   existing probootstrap markup. Loaded LAST so it wins.
+   Accent: school green and gold.
+   ============================================================ */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f7fb;
+  --text: #1e2330;              /* headings / near-black */
+  --body: #4b5563;             /* body copy (was a washed #8b8e94) */
+  --muted: #6b7280;
+  --faint: #9ca3af;
+  --line: #e7e9f0;
+  --line-strong: #d8dbe6;
+  --accent: #155b3a;
+  --accent-hover: #0d4029;
+  --accent-light: #e9b949;
+  --accent-soft: #eaf1e9;
+  --grad: linear-gradient(135deg, #0d4029 0%, #247449 100%);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(16,24,40,.05), 0 6px 20px rgba(16,24,40,.06);
+  --shadow-hover: 0 18px 40px rgba(16,24,40,.14);
+}
+
+/* ---------- base ---------- */
+body {
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--body);
+  background: var(--bg-soft);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); transition: color .15s ease; text-decoration: none; }
+a:hover, a:focus, a:active { color: var(--accent-hover); text-decoration: none; }
+img { max-width: 100%; height: auto; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit; color: var(--text); font-weight: 700;
+  letter-spacing: -.01em; line-height: 1.25; margin: 0 0 22px;
+}
+.probootstrap-page-wrapper { background: var(--bg); box-shadow: 0 0 60px rgba(16,24,40,.06); }
+
+/* soften the enormous default section padding a touch */
+.probootstrap-section { padding: 5.5em 0; }
+@media (max-width: 768px) { .probootstrap-section { padding: 3em 0; } }
+
+/* BS5-migration grid fix: the old BS3 `.visible-sm-block` clearfix spacers (that
+   force a 2-up wrap between cols) became always-on `d-block` in BS5, so a full
+   -width break lands inside every 4-/3-col row on desktop → cards render 2-up
+   with a dead right half. Hide them at md+ so counters, teachers, news, events
+   grids take their intended column count. */
+@media (min-width: 768px) {
+  .clearfix.visible-sm-block { display: none !important; }
+}
+
+/* ---------- top contact bar ---------- */
+.probootstrap-header-top {
+  background: #12141c;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  border: 0;
+}
+.probootstrap-header-top .probootstrap-top-quick-contact-info span { color: rgba(255,255,255,.72); }
+.probootstrap-header-top i { color: var(--accent-light); }
+.probootstrap-header-top .probootstrap-top-social a { color: rgba(255,255,255,.6); }
+.probootstrap-header-top .probootstrap-top-social a:hover { color: #fff; }
+
+/* ---------- navbar ---------- */
+.probootstrap-navbar { background: #fff; border-bottom: 1px solid var(--line); }
+.probootstrap-navbar .navbar-brand {
+  color: var(--accent) !important; font-weight: 800; letter-spacing: -.02em; font-size: 26px;
+}
+.probootstrap-navbar .navbar-nav > li > a {
+  color: var(--text) !important; font-weight: 600; font-size: 13.5px;
+  letter-spacing: .04em; text-transform: uppercase; position: relative;
+}
+.probootstrap-navbar .navbar-nav > li > a:hover,
+.probootstrap-navbar .navbar-nav > li > a:focus,
+.probootstrap-navbar .navbar-nav > li.active > a { color: var(--accent) !important; }
+@media (min-width: 768px) {
+  .probootstrap-navbar .navbar-nav > li > a::after {
+    content: ""; position: absolute; left: 15px; right: 15px; bottom: 8px; height: 2px;
+    background: var(--accent); border-radius: 2px; transform: scaleX(0);
+    transform-origin: center; transition: transform .2s ease;
+  }
+  .probootstrap-navbar .navbar-nav > li:hover > a::after,
+  .probootstrap-navbar .navbar-nav > li.active > a::after { transform: scaleX(1); }
+}
+/* dropdown menus: clean rounded panel */
+.probootstrap-navbar .dropdown-menu {
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: 8px 0;
+}
+.probootstrap-navbar .dropdown-menu > li a:hover { color: var(--accent); }
+.probootstrap-navbar .dropdown > a:before,
+.probootstrap-navbar .dropdown-submenu > a:before { color: var(--accent); }
+
+/* ---------- buttons ---------- */
+.btn { border-radius: 999px; font-weight: 600; letter-spacing: .01em; }
+.btn.btn-primary {
+  background: var(--accent); border: 1px solid var(--accent); color: #fff;
+  padding: 12px 30px; box-shadow: 0 8px 20px rgba(21,91,58,.22);
+}
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+  background: var(--accent-hover); border-color: var(--accent-hover); color: #fff;
+  box-shadow: 0 10px 26px rgba(21,91,58,.3);
+}
+.enrolled-count { color: var(--faint); font-size: 13.5px; margin-left: 8px; }
+
+/* ---------- HERO (flexslider) : dark gradient scrim + bold white title ---------- */
+/* drop the dated fixed-attachment parallax (janky on scroll, also fine for real UX) */
+.flexslider .slides > li { background-attachment: scroll; }
+/* override the template's flat rgba(0,0,0,.3) overlay with a richer gradient */
+.flexslider .slides > li.overlay:before {
+  background: linear-gradient(180deg, rgba(20,18,60,.42) 0%, rgba(12,14,22,.62) 100%) !important;
+  z-index: 1;
+}
+.flexslider .slides > li > .container { position: relative; z-index: 2; }
+.probootstrap-slider-text { padding: 8.5em 0; }
+@media (max-width: 768px) { .probootstrap-slider-text { padding: 5em 0; } }
+.flexslider .probootstrap-heading {
+  font-weight: 800; color: #fff; letter-spacing: -.02em;
+  text-shadow: 0 2px 24px rgba(0,0,0,.35);
+}
+.flexslider .flex-control-paging a { background: rgba(255,255,255,.5); }
+.flexslider .flex-control-paging a.flex-active { background: var(--accent-light); }
+
+/* ---------- page-title band (section-colored, NO bg image) ---------- */
+.probootstrap-section.probootstrap-section-colored:not(.probootstrap-bg) {
+  background: var(--grad);
+  padding: 3.4em 0;
+}
+/* when a floating card (flex-block / sidebar overlap) pulls up into the band,
+   add bottom room so the title never gets covered */
+.probootstrap-section-colored:not(.probootstrap-bg):has(+ .probootstrap-section .probootstrap-flex-block),
+.probootstrap-section-colored:not(.probootstrap-bg):has(+ .probootstrap-section .probootstrap-overlap) {
+  padding-bottom: 8em;
+}
+.probootstrap-section-colored:not(.probootstrap-bg) .section-heading { margin-bottom: 0; }
+.probootstrap-section-colored:not(.probootstrap-bg) .section-heading h1,
+.probootstrap-section-colored:not(.probootstrap-bg) .section-heading h2 { color: #fff; margin-bottom: 0; }
+.probootstrap-section-colored:not(.probootstrap-bg) .section-heading p { color: rgba(255,255,255,.75); }
+
+/* ---------- bg-image bands (highlights tabs + testimonial): keep dark, refine scrim ---------- */
+.probootstrap-section.probootstrap-bg:before { background: rgba(14,16,24,.6); }
+.probootstrap-section.probootstrap-bg .section-heading h1,
+.probootstrap-section.probootstrap-bg .section-heading h2 { color: #fff; }
+.probootstrap-section.probootstrap-bg .section-heading p { color: rgba(255,255,255,.8); }
+
+/* highlights tabs */
+.nav-tabs.probootstrap-tabs > li > a {
+  background: rgba(255,255,255,.14); color: #fff; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  font-weight: 600; letter-spacing: .02em;
+}
+.nav-tabs.probootstrap-tabs > li > a:hover { background: rgba(255,255,255,.26); }
+.nav-tabs.probootstrap-tabs > li.active > a,
+.nav-tabs.probootstrap-tabs > li > a.active { background: #fff; color: var(--accent); }
+
+/* ---------- section headings ---------- */
+.section-heading h2 { font-weight: 700; }
+.section-heading .lead, .section-heading p.lead { color: var(--muted); }
+.probootstrap-uppercase {
+  color: var(--accent); font-weight: 700; letter-spacing: .12em; font-size: 12px; margin-bottom: 10px;
+}
+
+/* ---------- counters ---------- */
+.probootstrap-counter-wrap .probootstrap-icon i { color: var(--accent); }
+.probootstrap-counter-wrap .probootstrap-text .probootstrap-counter { color: var(--text); font-weight: 700; }
+.probootstrap-counter-wrap .probootstrap-text .probootstrap-counter-label { color: var(--muted); }
+
+/* ---------- flex-block (overlapping feature) ---------- */
+.probootstrap-flex-block .probootstrap-text {
+  border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line);
+}
+.probootstrap-flex-block .probootstrap-image {
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+}
+.probootstrap-flex-block .probootstrap-image .btn-video i { color: #fff; }
+
+/* ---------- course cards (probootstrap-service-2) ---------- */
+.probootstrap-service-2 {
+  border-radius: var(--radius); overflow: hidden; background: #fff;
+  box-shadow: var(--shadow); border: 1px solid var(--line);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.probootstrap-service-2:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.probootstrap-service-2 .image { overflow: hidden; }
+.probootstrap-service-2 .image .image-bg img { transition: transform .5s ease; }
+.probootstrap-service-2:hover .image .image-bg img { transform: translateY(-50%) translateX(-50%) scale(1.06); }
+.probootstrap-service-2 .text h3 { font-size: 20px; margin-bottom: 10px; }
+.probootstrap-service-2 .text .probootstrap-meta { color: var(--accent); font-weight: 600; }
+.probootstrap-service-2 .text .probootstrap-meta i { color: var(--accent); }
+
+/* ---------- featured news / event cards ---------- */
+.probootstrap-featured-news-box { display: block; }
+.probootstrap-featured-news-box .probootstrap-media {
+  border-radius: var(--radius) var(--radius) 0 0; overflow: hidden;
+}
+.probootstrap-featured-news-box .probootstrap-media img { transition: transform .5s ease; display: block; width: 100%; }
+.probootstrap-featured-news-box:hover .probootstrap-media img { transform: scale(1.06); }
+.probootstrap-featured-news-box .probootstrap-text {
+  border-radius: var(--radius); border-bottom: 3px solid var(--accent);
+  box-shadow: var(--shadow); transition: box-shadow .25s ease, top .25s ease;
+}
+.probootstrap-featured-news-box .probootstrap-text h3 { font-size: 18px; }
+/* modern hover: lift + indigo title, NOT a full solid-purple flip */
+.probootstrap-featured-news-box:hover .probootstrap-text,
+.probootstrap-featured-news-box:focus .probootstrap-text {
+  background: #fff; top: -40px; box-shadow: var(--shadow-hover);
+}
+.probootstrap-featured-news-box:hover .probootstrap-text h3,
+.probootstrap-featured-news-box:focus .probootstrap-text h3 { color: var(--accent); }
+.probootstrap-featured-news-box:hover .probootstrap-text p,
+.probootstrap-featured-news-box:focus .probootstrap-text p { color: var(--body); }
+.probootstrap-featured-news-box:hover .probootstrap-text .probootstrap-date,
+.probootstrap-featured-news-box:hover .probootstrap-text .probootstrap-location,
+.probootstrap-featured-news-box:focus .probootstrap-text .probootstrap-date,
+.probootstrap-featured-news-box:focus .probootstrap-text .probootstrap-location { color: var(--muted); }
+.probootstrap-featured-news-box:hover .probootstrap-text .probootstrap-date i,
+.probootstrap-featured-news-box:hover .probootstrap-text .probootstrap-location i,
+.probootstrap-featured-news-box:focus .probootstrap-text .probootstrap-date i,
+.probootstrap-featured-news-box:focus .probootstrap-text .probootstrap-location i { color: var(--accent); }
+.probootstrap-date i, .probootstrap-location i { color: var(--accent); }
+
+/* ---------- teacher cards ---------- */
+.probootstrap-teacher {
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 20px;
+  background: #fff; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.probootstrap-teacher .media { margin-bottom: 18px; }
+.probootstrap-teacher .media img {
+  width: 104px; height: 104px; object-fit: cover; border-radius: 50%;
+  border: 4px solid var(--accent-soft);
+}
+.probootstrap-teacher .text h3 { font-size: 19px; }
+.probootstrap-teacher .text p { color: var(--muted); }
+.probootstrap-teacher:hover, .probootstrap-teacher:focus {
+  transform: translateY(-8px); border-color: transparent; box-shadow: var(--shadow-hover);
+}
+
+/* ---------- "why choose" service list ---------- */
+.service.left-icon .icon i { color: var(--accent); }
+.service.left-icon h3 { font-size: 20px; }
+
+/* ---------- testimonial (white card floating on the dark graduation photo) ---------- */
+.probootstrap-testimony-wrap {
+  border-radius: var(--radius); padding: 40px 36px 36px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.28);
+}
+.probootstrap-testimonial .probootstrap-testimony-wrap figure img {
+  width: 92px !important; height: 92px; object-fit: cover; border-radius: 50%;
+  border: 4px solid var(--accent-soft); margin: 0 auto;
+}
+.probootstrap-testimony-wrap blockquote,
+.probootstrap-testimonial .quote { color: var(--text); font-size: 18px; line-height: 1.7; font-style: italic; }
+.probootstrap-testimony-wrap blockquote cite,
+.probootstrap-testimonial .quote .author { color: var(--muted); font-style: normal; }
+.probootstrap-testimony-wrap blockquote cite span,
+.probootstrap-testimonial .quote .author span { color: var(--accent); font-weight: 700; }
+
+/* ---------- gallery ----------
+   The template stacks TWO layout systems on the grid: a float:left ~30% grid
+   (style.css) AND column-count:3 (bs5 layer) — they nest and shrink every image
+   to ~100px. Replace both with a clean CSS grid. */
+.probootstrap-gallery {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.probootstrap-gallery .grid-item {
+  float: none; width: auto; margin: 0;
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+}
+.probootstrap-gallery .grid-item > a { display: block; }
+.probootstrap-gallery .grid-item img { display: block; width: 100%; height: auto; transition: transform .5s ease; }
+.probootstrap-gallery .grid-item:hover img { transform: scale(1.06); }
+.probootstrap-gallery .grid-item figcaption { display: none; }
+@media (max-width: 767.98px) { .probootstrap-gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .probootstrap-gallery { grid-template-columns: 1fr; } }
+
+/* ---------- single course: sidebar + body ---------- */
+.probootstrap-sidebar-inner { border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); }
+.probootstrap-side-menu li a { color: var(--body); }
+.probootstrap-side-menu li a:hover { color: var(--accent); }
+.probootstrap-side-menu li.active a,
+.probootstrap-side-menu li.active > a { color: var(--accent); font-weight: 700; }
+#probootstrap-content h2 { color: var(--text); }
+#probootstrap-content p { color: var(--body); }
+
+/* body copy readability across inner pages */
+.probootstrap-section p { color: var(--body); }
+.probootstrap-section .section-heading h1,
+.probootstrap-section .section-heading h2 { color: var(--text); }
+
+/* ---------- contact form ---------- */
+.probootstrap-form .form-control,
+.form-control {
+  border-radius: var(--radius-sm); border: 1px solid var(--line-strong);
+  padding: 12px 16px; box-shadow: none; background: #fff;
+}
+.probootstrap-form .form-control:focus,
+.form-control:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(21,91,58,.14); outline: none;
+}
+.probootstrap-form textarea.form-control { height: auto; min-height: 160px; }
+
+/* ---------- CTA band ---------- */
+.probootstrap-cta { background: var(--grad); color: #fff; padding: 3.4em 0; }
+.probootstrap-cta h2 { color: #fff; font-weight: 700; }
+.probootstrap-cta .btn.btn-ghost {
+  border: 2px solid rgba(255,255,255,.85); color: #fff; border-radius: 999px; font-weight: 600;
+}
+.probootstrap-cta .btn.btn-ghost:hover { background: #fff; color: var(--accent); border-color: #fff; }
+
+/* ---------- footer ---------- */
+.probootstrap-footer { background: #0f1115; color: rgba(255,255,255,.72); }
+.probootstrap-footer .probootstrap-footer-widget h3 {
+  color: #fff; font-size: 18px; font-weight: 700; letter-spacing: .01em;
+  padding-bottom: 12px; margin-bottom: 18px; position: relative;
+}
+.probootstrap-footer .probootstrap-footer-widget h3:after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 44px; height: 3px;
+  background: var(--accent-light); border-radius: 3px;
+}
+.probootstrap-footer a { color: rgba(255,255,255,.62); }
+.probootstrap-footer a:hover { color: #fff; }
+.probootstrap-footer .probootstrap-contact-info li i { color: var(--accent-light); }
+.probootstrap-footer .probootstrap-footer-social li a { color: rgba(255,255,255,.62); }
+.probootstrap-footer .probootstrap-footer-social li a:hover { color: #fff; }
+.probootstrap-footer .probootstrap-copyright { background: #090a0e; }
+.probootstrap-footer .probootstrap-copyright p { color: rgba(255,255,255,.5); font-size: 13.5px; }
+.probootstrap-footer .probootstrap-copyright a { color: var(--accent-light); }
+.probootstrap-footer .probootstrap-copyright .icon-heart { color: #ef4444; }
+
+/* ---------- search overlay ---------- */
+.probootstrap-search input[type="search"] { border-bottom-color: var(--accent-light); }
+
+.probootstrap-navbar .navbar-brand {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-height: 50px;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 58px !important;
+  position: static;
+  background: none;
+  text-indent: 0;
+  text-transform: none;
+  color: var(--accent) !important;
+  font-size: 18px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.probootstrap-navbar .navbar-brand .school-logo {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  object-fit: contain;
+}

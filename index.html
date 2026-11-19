@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about Namboole High School in Bweyogerere, Uganda: academics, school life, facilities, and how to get in touch."
+    />
+    <title>Namboole High School | Aspire to Inspire</title>
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        --green: #155b3a;
+        --green-dark: #0d4029;
+        --gold: #e9b949;
+        --ink: #15251c;
+        --muted: #56645c;
+        --paper: #f6f8f4;
+        --white: #fff;
+        --line: #e0e8e1;
+        --shadow: 0 18px 48px rgba(13, 49, 31, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 1;
+        background: var(--white);
+        box-shadow: 0 3px 18px rgba(18, 44, 28, 0.08);
+      }
+
+      .header-inner {
+        width: min(1160px, calc(100% - 40px));
+        min-height: 82px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--green-dark);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+      }
+
+      .brand span {
+        display: grid;
+        line-height: 1.2;
+      }
+
+      .brand small {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.73rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+      }
+
+      .site-nav a {
+        color: #34483b;
+        font-size: 0.95rem;
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      .site-nav a:hover,
+      .site-nav a:focus-visible {
+        color: var(--green);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .site-nav > .events-nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #f2f6f2;
+        color: var(--green-dark);
+      }
+
+      .site-nav > .events-nav-link:hover,
+      .site-nav > .events-nav-link:focus-visible {
+        border-color: var(--green);
+        background: #eaf1e9;
+        color: var(--green-dark);
+        text-decoration: none;
+      }
+
+      .events-nav-link svg {
+        width: 17px;
+        height: 17px;
+        flex: 0 0 auto;
+      }
+
+      .site-nav .login-link {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--green);
+        color: var(--white);
+      }
+
+      .site-nav .login-link:hover,
+      .site-nav .login-link:focus-visible {
+        background: var(--green-dark);
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .nav-group {
+        position: relative;
+      }
+
+      .nav-group summary {
+        color: #34483b;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 650;
+        list-style: none;
+      }
+
+      .nav-group summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .nav-group summary::after {
+        content: " +";
+        color: var(--green);
+      }
+
+      .nav-group[open] summary::after {
+        content: " −";
+      }
+
+      .nav-group[open] .nav-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        z-index: 2;
+        display: grid;
+        min-width: 190px;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        min-height: 590px;
+        display: grid;
+        align-items: center;
+        background:
+          linear-gradient(90deg, rgba(8, 36, 24, 0.88), rgba(8, 36, 24, 0.42)),
+          url("0284a6e7-df8e-494b-be4a-b82823b0f461.png") center 54% / cover no-repeat;
+        color: var(--white);
+      }
+
+      .hero-inner {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 76px 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: #f6d780;
+        font-size: 0.82rem;
+        font-weight: 750;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 720px;
+        margin: 0;
+        font-size: clamp(2.8rem, 6vw, 5.6rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-copy {
+        max-width: 630px;
+        margin: 22px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(1.05rem, 2vw, 1.22rem);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 2px solid transparent;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #18251c;
+        font-weight: 750;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-2px);
+        background: #f3ca67;
+      }
+
+      .button-outline {
+        border-color: rgba(255, 255, 255, 0.8);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .button-outline:hover,
+      .button-outline:focus-visible {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .intro-strip {
+        position: relative;
+        z-index: 1;
+        width: min(1160px, calc(100% - 40px));
+        margin: -38px auto 0;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0;
+        overflow: hidden;
+        border-radius: 18px;
+        background: linear-gradient(110deg, #0d4029, #17633f 65%, #247449);
+        box-shadow: var(--shadow);
+      }
+
+      .intro-item {
+        display: grid;
+        align-content: center;
+        min-height: 124px;
+        padding: 20px 12px;
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: center;
+      }
+
+      .intro-item:last-child {
+        border-right: 0;
+      }
+
+      .intro-item strong {
+        display: block;
+        color: var(--gold);
+        font-size: clamp(1.6rem, 3.2vw, 2.55rem);
+        font-variant-numeric: tabular-nums;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .intro-item span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.92rem;
+        font-weight: 650;
+      }
+
+      .stat-accessible-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .section {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 88px 0;
+      }
+
+      .section-heading {
+        max-width: 690px;
+        margin: 0 auto 38px;
+        text-align: center;
+      }
+
+      .section-heading .eyebrow {
+        color: var(--green);
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        color: var(--green-dark);
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading p {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .principles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .principle-card {
+        border-top: 4px solid var(--gold);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .offer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .feature-card {
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: 0 8px 24px rgba(13, 49, 31, 0.05);
+      }
+
+      .offer-card {
+        padding: 24px;
+      }
+
+      .offer-number {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--green);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 10px;
+        color: var(--green-dark);
+        font-size: 1.2rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .offer-actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .offer-actions .button {
+        background: var(--green);
+        color: var(--white);
+      }
+
+      .offer-actions .button:hover,
+      .offer-actions .button:focus-visible {
+        background: var(--green-dark);
+      }
+
+      .offer-actions .button-outline {
+        border-color: var(--green);
+        background: transparent;
+        color: var(--green);
+      }
+
+      .offer-actions .button-outline:hover,
+      .offer-actions .button-outline:focus-visible {
+        background: #eaf1e9;
+      }
+
+      .school-story {
+        background: var(--white);
+      }
+
+      .school-story .learning-inner {
+        padding: 82px 0;
+      }
+
+      .story-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0;
+      }
+
+      .story-points span {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--green-dark);
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .school-story .learning-image img {
+        aspect-ratio: 1.5;
+      }
+
+      .learning {
+        background: #eaf1e9;
+      }
+
+      .learning-inner {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 78px 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+        align-items: center;
+        gap: 54px;
+      }
+
+      .learning-copy .eyebrow {
+        color: var(--green);
+      }
+
+      .learning-copy h2 {
+        margin: 0;
+        color: var(--green-dark);
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.12;
+      }
+
+      .learning-copy p {
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .learning-image {
+        margin: 0;
+      }
+
+      .learning-image img {
+        display: block;
+        width: 100%;
+        max-height: 380px;
+        aspect-ratio: 1.35;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow: var(--shadow);
+      }
+
+      .learning-image figcaption {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-align: right;
+      }
+
+      .team-highlight {
+        background: var(--green-dark);
+        color: var(--white);
+      }
+
+      .team-highlight .learning-copy .eyebrow {
+        color: var(--gold);
+      }
+
+      .team-highlight .learning-copy h2 {
+        color: var(--white);
+      }
+
+      .team-highlight .learning-copy p {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .team-highlight .learning-image img {
+        width: min(100%, 360px);
+        max-height: 430px;
+        margin-left: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center 30%;
+      }
+
+      .team-highlight .learning-image figcaption {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .team-highlight .button {
+        background: var(--gold);
+        color: var(--ink);
+      }
+
+      .school-life {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .life-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+      }
+
+      .life-card img {
+        display: block;
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+      }
+
+      .life-card.poster img {
+        height: 320px;
+        object-fit: contain;
+        background: #f5f2e7;
+      }
+
+      .life-card h3 {
+        margin: 0;
+        padding: 18px 20px 20px;
+        color: var(--green-dark);
+        font-size: 1.08rem;
+      }
+
+      .updates-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .update-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: 0 8px 24px rgba(13, 49, 31, 0.05);
+      }
+
+      .update-card img {
+        display: block;
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+      }
+
+      .update-card.poster img {
+        object-fit: contain;
+        background: #f5f2e7;
+      }
+
+      .update-card-copy {
+        padding: 20px;
+      }
+
+      .update-card-copy p {
+        margin: 0 0 8px;
+        color: var(--green);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .update-card-copy h3 {
+        margin: 0 0 8px;
+        color: var(--green-dark);
+        font-size: 1.15rem;
+      }
+
+      .update-card-copy a {
+        color: var(--green);
+        font-weight: 750;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      .candidate-dedication-poster {
+        margin: 26px auto 0;
+        text-align: center;
+      }
+
+      .school-notice-posters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 22px;
+        margin-top: 26px;
+      }
+
+      .school-notice-posters .candidate-dedication-poster {
+        margin: 0 auto;
+      }
+
+      .candidate-dedication-poster img {
+        display: block;
+        width: min(100%, 360px);
+        height: auto;
+        margin: 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .candidate-dedication-poster figcaption {
+        margin-top: 10px;
+        color: var(--green-dark);
+        font-weight: 750;
+      }
+
+      .about-link {
+        margin-top: 26px;
+        text-align: center;
+      }
+
+      .about-link .button {
+        background: var(--green);
+        color: var(--white);
+      }
+
+      .about-link .button:hover,
+      .about-link .button:focus-visible {
+        background: var(--green-dark);
+      }
+
+      .contact-band {
+        padding: 56px 20px;
+        background: var(--green-dark);
+        color: var(--white);
+        text-align: center;
+      }
+
+      .contact-band h2 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+      }
+
+      .contact-band p {
+        max-width: 640px;
+        margin: 12px auto 22px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .contact-band .button {
+        background: var(--white);
+        color: var(--green-dark);
+      }
+
+      .admissions-panel {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 0 0 82px;
+      }
+
+      .admissions-panel-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 34px clamp(22px, 5vw, 56px);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .admissions-panel h2 {
+        margin: 0;
+        color: var(--green-dark);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .admissions-panel p {
+        max-width: 650px;
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .admissions-panel .button {
+        flex-shrink: 0;
+        background: var(--green);
+        color: var(--white);
+      }
+
+      .site-footer {
+        padding: 22px 20px;
+        background: #092f20;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .site-footer a {
+        color: var(--white);
+      }
+
+      @media (max-width: 760px) {
+        .header-inner {
+          padding: 14px 0;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .site-nav {
+          justify-content: flex-start;
+          gap: 12px 18px;
+        }
+
+        .nav-group[open] .nav-menu {
+          position: static;
+          min-width: 0;
+          margin-top: 8px;
+          box-shadow: none;
+        }
+
+        .site-nav .nav-group[open] {
+          flex-basis: 100%;
+        }
+
+        .hero {
+          min-height: 520px;
+        }
+
+        .intro-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          margin-top: -24px;
+        }
+
+        .intro-item:last-child {
+          grid-column: 1 / -1;
+        }
+
+        .feature-grid,
+        .offer-grid,
+        .principles-grid,
+        .updates-grid,
+        .school-life {
+          grid-template-columns: 1fr;
+        }
+
+        .candidate-dedication-poster {
+          margin-top: 20px;
+        }
+
+        .school-notice-posters {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .school-notice-posters .candidate-dedication-poster {
+          margin: 0 auto;
+        }
+
+        .admissions-panel-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .learning-inner {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          padding: 62px 0;
+        }
+
+        .team-highlight .learning-image img {
+          margin: 0 auto;
+        }
+
+        .section {
+          padding: 66px 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="css/site-redesign.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="home.html" aria-label="Namboole High School home">
+          <img src="NAMBOOLE LOGO.webp" alt="" />
+          <span>
+            Namboole High School
+            <small>Aspire to Inspire</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#welcome" aria-current="page">Home</a>
+          <a href="courses.html">Academics</a>
+          <a class="events-nav-link" href="events.html">
+            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3.5" width="12" height="10.5" rx="1.5"></rect>
+              <path d="M5 2v3M11 2v3M2 6.5h12"></path>
+            </svg>
+            Events
+          </a>
+          <details class="nav-group">
+            <summary>Explore</summary>
+            <div class="nav-menu">
+              <a href="about.html">About the school</a>
+              <a href="news.html">News and notices</a>
+              <a href="gallery.html">Photo gallery</a>
+              <a href="teachers.html">Teachers</a>
+              <a href="drivers.html">Directions</a>
+            </div>
+          </details>
+          <a href="contact.html">Contact</a>
+          <a class="login-link" href="index.html">Join our community</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="welcome" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <p class="eyebrow">Bweyogerere · Uganda</p>
+          <h1 id="hero-title">Aspire to Inspire</h1>
+          <p class="hero-copy">
+            Welcome to Namboole High School, a Christian-founded mixed day and boarding
+            secondary school committed to learning, character, and community.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="about.html">Discover our school</a>
+            <a class="button button-outline" href="drivers.html">Find us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="Namboole High School facts">
+        <div class="intro-item">
+          <strong class="stat-value" data-target="2500" data-suffix="+" aria-hidden="true">2,500+</strong>
+          <span aria-hidden="true">Students</span>
+          <span class="stat-accessible-text">2,500+ students</span>
+        </div>
+        <div class="intro-item">
+          <strong class="stat-value" data-target="60" data-suffix="" aria-hidden="true">60</strong>
+          <span aria-hidden="true">Teachers</span>
+          <span class="stat-accessible-text">60 teachers</span>
+        </div>
+        <div class="intro-item">
+          <strong class="stat-value" data-target="18" data-suffix="" aria-hidden="true">18</strong>
+          <span aria-hidden="true">Subjects</span>
+          <span class="stat-accessible-text">18 subjects</span>
+        </div>
+        <div class="intro-item">
+          <strong class="stat-value" data-target="5" data-suffix="" aria-hidden="true">5</strong>
+          <span aria-hidden="true">Modern Labs</span>
+          <span class="stat-accessible-text">5 modern labs</span>
+        </div>
+        <div class="intro-item">
+          <strong class="stat-value" data-target="26" data-suffix="+" aria-hidden="true">26+</strong>
+          <span aria-hidden="true">Years</span>
+          <span class="stat-accessible-text">26+ years</span>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="guiding-title">
+        <div class="section-heading">
+          <p class="eyebrow">Learning with purpose</p>
+          <h2 id="guiding-title">What guides our school community</h2>
+          <p>
+            A Namboole education brings together academic effort, Christian values,
+            and the confidence to inspire others.
+          </p>
+        </div>
+        <div class="principles-grid">
+          <article class="feature-card principle-card">
+            <h3>Academic growth</h3>
+            <p>
+              Arts and Sciences pathways give students opportunities to build
+              knowledge and prepare for their next steps.
+            </p>
+          </article>
+          <article class="feature-card principle-card">
+            <h3>Faith and character</h3>
+            <p>
+              As a Christian-founded school, Namboole promotes Christian values
+              and teachings throughout the school community.
+            </p>
+          </article>
+          <article class="feature-card principle-card">
+            <h3>“Aspire to Inspire”</h3>
+            <p>
+              Our motto encourages students to aim high and use what they learn
+              to make a positive difference.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="school-story" aria-labelledby="school-story-title">
+        <div class="learning-inner">
+          <figure class="learning-image">
+            <img
+              src="images (2).jpg"
+              alt="Namboole High School building and grounds"
+              class="photo-enhanced"
+              loading="lazy"
+            />
+            <figcaption>Namboole High School in Bweyogerere, Uganda.</figcaption>
+          </figure>
+          <div class="learning-copy">
+            <p class="eyebrow">About Namboole</p>
+            <h2 id="school-story-title">A school community since 2000</h2>
+            <p>
+              Namboole High School is a Christian-founded mixed day and boarding
+              secondary school in Bweyogerere. Students can study Arts and Sciences
+              at O-Level and A-Level in a community committed to learning, character,
+              and faith.
+            </p>
+            <div class="story-points" aria-label="School details">
+              <span>Established 2000</span>
+              <span>Day and boarding</span>
+              <span>O-Level and A-Level</span>
+            </div>
+            <a class="button" href="about.html">Discover our school</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <p class="eyebrow">Learning and growth</p>
+          <h2 id="learning-title">A place to learn, discover, and develop</h2>
+          <p>
+            Namboole combines academic pathways, practical facilities, and activities
+            that help students grow in knowledge, character, and confidence.
+          </p>
+        </div>
+        <div class="offer-grid">
+          <article class="feature-card offer-card">
+            <span class="offer-number">01</span>
+            <h3>Arts and Sciences</h3>
+            <p>
+              Study Arts or Sciences at O-Level and A-Level across 18 subjects.
+            </p>
+          </article>
+          <article class="feature-card offer-card">
+            <span class="offer-number">02</span>
+            <h3>Practical learning</h3>
+            <p>
+              Five modern labs give students space to explore practical work and
+              strengthen their classroom learning.
+            </p>
+          </article>
+          <article class="feature-card offer-card">
+            <span class="offer-number">03</span>
+            <h3>Library and computer lab</h3>
+            <p>
+              Read, research, study independently, and build practical ICT skills.
+            </p>
+          </article>
+          <article class="feature-card offer-card">
+            <span class="offer-number">04</span>
+            <h3>Sport, music, and fellowship</h3>
+            <p>
+              Football, choir, and Christian fellowship help students build teamwork,
+              creativity, and a sense of community.
+            </p>
+          </article>
+          <article class="feature-card offer-card">
+            <span class="offer-number">05</span>
+            <h3>Day and boarding</h3>
+            <p>
+              Namboole welcomes day and boarding students into its school community.
+              Contact the school for current arrangements.
+            </p>
+          </article>
+          <article class="feature-card offer-card">
+            <span class="offer-number">06</span>
+            <h3>Chaplaincy and values</h3>
+            <p>
+              Ssempala Jessy, the school chaplain, promotes Christian values and
+              teachings across the school community.
+            </p>
+          </article>
+        </div>
+        <div class="offer-actions">
+          <a class="button" href="courses.html">Explore academics</a>
+          <a class="button button-outline" href="contact.html">Ask about admissions</a>
+        </div>
+      </section>
+
+      <section class="team-highlight" aria-labelledby="team-title">
+        <div class="learning-inner">
+          <div class="learning-copy">
+            <p class="eyebrow">Our people</p>
+            <h2 id="team-title">A team supporting every learner</h2>
+            <p>
+              60 teachers support learning across the school. Ssempala Jessy serves
+              as the school chaplain and promotes Christian values and teachings in the
+              community, while Lutaya Noah teaches Geography and promotes Islamic faith
+              and values.
+            </p>
+            <a class="button" href="teachers.html">Meet the teaching team</a>
+          </div>
+          <figure class="learning-image">
+            <img
+              src="ssempalajesse_7684643771845299464.webp"
+              alt="Ssempala Jessy, Namboole High School chaplain"
+              loading="lazy"
+            />
+            <figcaption>Ssempala Jessy</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="school-story deputies-message" aria-labelledby="deputies-message-title">
+        <div class="learning-inner">
+          <figure class="learning-image">
+            <img
+              src="deputies-message.jpg"
+              alt="Deputies of Namboole High School, Mr Ssebwato and Mr Nakabale"
+              loading="lazy"
+            />
+            <figcaption>Mr Ssebwato and Mr Nakabale</figcaption>
+          </figure>
+          <div class="learning-copy">
+            <p class="eyebrow">School leadership</p>
+            <h2 id="deputies-message-title">Message from the Deputies</h2>
+            <p>
+              <strong>Academics &amp; Hard Work:</strong> Deputies in charge of academics
+              often emphasize that success comes to students who stay committed to their
+              studies, maintain good behavior, and regularly consult their teachers.
+            </p>
+            <p>
+              <strong>Discipline &amp; Character:</strong> Administration deputies frequently
+              highlight that shaping a learner's discipline—through guidance, counseling,
+              and spiritual or moral nurturing—is the foundation for long-term achievement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning" aria-labelledby="school-life-title">
+        <div class="learning-inner">
+          <div class="learning-copy">
+            <p class="eyebrow">School life</p>
+            <h2 id="school-life-title">More ways to learn, participate, and belong</h2>
+            <p>
+              Football, choir, student leadership, and fellowship are among the
+              activities that bring learning beyond the classroom. Explore the school
+              information and photos to learn more.
+            </p>
+            <a class="button" href="about.html#school-life">Explore school life</a>
+          </div>
+          <figure class="learning-image">
+            <img
+              src="images (4).jpg"
+              alt="Namboole High School students participating in a group activity"
+              class="photo-enhanced"
+              loading="lazy"
+            />
+            <figcaption>Namboole students taking part in a school activity.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="learning choir-release" aria-labelledby="choir-release-title">
+        <div class="learning-inner">
+          <div class="learning-copy">
+            <p class="eyebrow">Latest from our choir</p>
+            <h2 id="choir-release-title">Omukisa Gumu</h2>
+            <p>
+              Namboole High School presents a new choir song. The audio release is
+              announced for 13 November.
+            </p>
+            <a class="button" href="https://www.youtube.com/@namboolehighschool" target="_blank" rel="noopener noreferrer">
+              Follow Namboole High School Music on YouTube
+            </a>
+          </div>
+          <figure class="learning-image choir-release-image">
+            <img
+              src="omukisa-gumu-poster.webp"
+              alt="Namboole High School choir song Omukisa Gumu, with audio release announced for 13 November"
+              loading="lazy"
+            />
+            <figcaption>Official song announcement poster · Audio release: 13 November</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="updates-title">
+        <div class="section-heading">
+          <p class="eyebrow">From our school community</p>
+          <h2 id="updates-title">News, music, and activities</h2>
+          <p>
+            Explore school announcements, student achievements, and the latest
+            activities from Namboole.
+          </p>
+        </div>
+        <div class="updates-grid">
+          <article class="update-card poster">
+            <img
+              src="omukisa-gumu-poster.webp"
+              alt="Namboole High School choir's Omukisa Gumu audio release poster"
+              loading="lazy"
+            />
+            <div class="update-card-copy">
+              <p>Choir release · 13 November</p>
+              <h3>Omukisa Gumu</h3>
+              <a href="https://www.youtube.com/@namboolehighschool" target="_blank" rel="noopener noreferrer">Visit Namboole High School Music on YouTube</a>
+            </div>
+          </article>
+          <article class="update-card">
+            <img
+              src="EEEEE.jpg"
+              alt="Namboole High School boys football team together on the field"
+              class="photo-enhanced"
+              loading="lazy"
+            />
+            <div class="update-card-copy">
+              <p>Student activities</p>
+              <h3>Boys’ football team</h3>
+              <a href="gallery.html">See the school gallery</a>
+            </div>
+          </article>
+          <article class="update-card poster">
+            <img
+              src="images (3).jpg"
+              alt="Namboole High School UACE 2025 top performers"
+              loading="lazy"
+            />
+            <div class="update-card-copy">
+              <p>Student achievement</p>
+              <h3>UACE 2025 performers</h3>
+              <a href="news.html">View school news and notices</a>
+            </div>
+          </article>
+        </div>
+        <div class="school-notice-posters">
+          <figure class="candidate-dedication-poster">
+            <img
+              src="candidate-dedication-sabbath.webp"
+              alt="Namboole High School invitation for the Candidate Dedication Sabbath on 3 October 2026"
+              loading="lazy"
+            />
+            <figcaption>Dedication Sabbath of Candidates</figcaption>
+          </figure>
+          <figure class="candidate-dedication-poster">
+            <img
+              src="week-of-prayer-poster.webp"
+              alt="Namboole High School Week of Prayer poster, 15–20 June 2026, featuring guest preacher Pr. Justus Perez"
+              loading="lazy"
+            />
+            <figcaption>Week of Prayer by Pr. Justus Perez</figcaption>
+          </figure>
+        </div>
+        <div class="about-link">
+          <a class="button" href="events.html">Explore school activities</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="photos-title">
+        <div class="section-heading">
+          <p class="eyebrow">Our community</p>
+          <h2 id="photos-title">A glimpse of Namboole High School</h2>
+          <p>See school photos, notices, and activities on the school information page.</p>
+        </div>
+        <div class="school-life">
+          <article class="life-card">
+            <img
+              src="0284a6e7-df8e-494b-be4a-b82823b0f461.png"
+              alt="Main entrance gate of Namboole High School"
+              class="photo-enhanced"
+              loading="lazy"
+            />
+            <h3>Welcome to our school</h3>
+          </article>
+          <article class="life-card">
+            <img src="images (1).jpg" alt="Namboole High School students" class="photo-enhanced" loading="lazy" />
+            <h3>Student life and unity</h3>
+          </article>
+          <article class="life-card">
+            <img src="EEEEE.jpg" alt="Namboole High School boys football team posing together on the field" class="photo-enhanced" loading="lazy" />
+            <h3>Boys' school football team</h3>
+          </article>
+          <article class="life-card poster">
+            <img src="images (3).jpg" alt="Namboole High School UACE best performers 2025 poster" loading="lazy" />
+            <h3>Celebrating UACE 2025 achievements</h3>
+          </article>
+        </div>
+        <div class="about-link">
+          <a class="button" href="about.html">More about Namboole High School</a>
+        </div>
+      </section>
+
+      <section class="admissions-panel" aria-labelledby="admissions-title">
+        <div class="admissions-panel-inner">
+          <div>
+            <p class="eyebrow">Admissions enquiries</p>
+            <h2 id="admissions-title">Take the next step with Namboole</h2>
+            <p>
+              Contact the school for current admission requirements, fees,
+              subject combinations, and day or boarding information.
+            </p>
+          </div>
+          <a class="button" href="contact.html">Ask the school</a>
+        </div>
+      </section>
+
+      <section class="contact-band" aria-labelledby="contact-title">
+        <h2 id="contact-title">We look forward to welcoming you</h2>
+        <p>
+          Find the school in Bweyogerere, Kira Municipality, or contact the school
+          directly for information.
+        </p>
+        <a class="button" href="contact.html">Contact the school</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Namboole High School · Aspire to Inspire ·
+        <a href="index.html">Join our community</a>
+      </p>
+    </footer>
+    <script>
+      (() => {
+        const counters = document.querySelectorAll(".stat-value");
+        const formatter = new Intl.NumberFormat();
+        const setFinalValues = () => {
+          counters.forEach((counter) => {
+            counter.textContent = `${formatter.format(Number(counter.dataset.target))}${counter.dataset.suffix}`;
+          });
+        };
+
+        if (
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          !("IntersectionObserver" in window)
+        ) {
+          setFinalValues();
+          return;
+        }
+
+        const animateCounter = (counter) => {
+          const target = Number(counter.dataset.target);
+          const suffix = counter.dataset.suffix;
+          const duration = 1400;
+          let startTime;
+
+          const update = (timestamp) => {
+            startTime ??= timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easedProgress = 1 - (1 - progress) ** 3;
+            counter.textContent = `${formatter.format(Math.round(target * easedProgress))}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            }
+          };
+
+          requestAnimationFrame(update);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, currentObserver) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+              animateCounter(entry.target);
+              currentObserver.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.35 }
+        );
+
+        counters.forEach((counter) => {
+          counter.textContent = `0${counter.dataset.suffix}`;
+          observer.observe(counter);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="School notices, student achievements, and updates from Namboole High School."
+    />
+    <title>News and Notices | Namboole High School</title>
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      :root {
+        --green: #155b3a;
+        --green-dark: #0d4029;
+        --paper: #f6f8f4;
+        --ink: #15251c;
+        --muted: #56645c;
+        --line: #e0e8e1;
+        --white: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .header,
+      .footer {
+        background: var(--white);
+      }
+
+      .header-inner,
+      main,
+      .footer-inner {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--green-dark);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+      }
+
+      nav a {
+        color: var(--green-dark);
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        text-decoration: underline;
+      }
+
+      .hero {
+        padding: 54px 20px;
+        background: var(--green-dark);
+        color: var(--white);
+        text-align: center;
+      }
+
+      .hero p {
+        margin: 0 0 8px;
+        color: #f3d477;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+      }
+
+      main {
+        padding: 56px 0 72px;
+      }
+
+      .intro {
+        max-width: 700px;
+        margin: 0 auto 32px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .notices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+
+      .notice {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: 0 8px 24px rgba(13, 49, 31, 0.06);
+      }
+
+      .notice img {
+        display: block;
+        width: 100%;
+        height: 240px;
+        background: #edf2ed;
+        object-fit: contain;
+      }
+
+      .notice-copy {
+        padding: 20px;
+      }
+
+      .notice h2 {
+        margin: 0 0 8px;
+        color: var(--green-dark);
+        font-size: 1.18rem;
+      }
+
+      .notice p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact {
+        margin-top: 36px;
+        padding: 24px;
+        border-radius: 16px;
+        background: #eaf1e9;
+        text-align: center;
+      }
+
+      .contact h2 {
+        margin: 0 0 8px;
+        color: var(--green-dark);
+      }
+
+      .contact a {
+        color: var(--green-dark);
+        font-weight: 700;
+      }
+
+      .footer {
+        padding: 22px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 20px;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 700px) {
+        .header-inner {
+          padding: 12px 0;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="css/site-redesign.css" />
+  </head>
+  <body class="news-page">
+    <header class="header">
+      <div class="header-inner">
+        <a class="brand" href="home.html">
+          <img src="NAMBOOLE LOGO.webp" alt="" />
+          <span>Namboole High School</span>
+        </a>
+        <nav aria-label="School pages">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="courses.html">Academics</a>
+          <a class="events-nav-link" href="events.html"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"></rect><path d="M5 2v3M11 2v3M2 6.5h12"></path></svg>Events</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="teachers.html">Teachers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <section class="hero">
+      <p>Aspire to Inspire</p>
+      <h1>News and Notices</h1>
+    </section>
+
+    <main>
+      <p class="intro">
+        School announcements, student achievements, and activity notices shared
+        with the Namboole High School community. Check each poster or contact
+        the school to confirm current dates and arrangements.
+      </p>
+
+      <section class="notices" aria-label="School announcements">
+        <article class="notice">
+          <img src="images (3).jpg" alt="UACE 2025 best performers announcement" />
+          <div class="notice-copy">
+            <h2>UACE 2025 best performers</h2>
+            <p>Celebrating the students featured in the school's performance announcement.</p>
+          </div>
+        </article>
+        <article class="notice">
+          <img src="images (6).jpg" alt="Notice to parents from Namboole High School" />
+          <div class="notice-copy">
+            <h2>Notice to parents</h2>
+            <p>Please refer to the school notice for details and contact the school if you need clarification.</p>
+          </div>
+        </article>
+        <article class="notice">
+          <img src="images (9).jpg" alt="Namboole High School Visitation Day poster" />
+          <div class="notice-copy">
+            <h2>Visitation Day</h2>
+            <p>Check the official poster or contact the school to confirm the current date and arrangements.</p>
+          </div>
+        </article>
+        <article class="notice">
+          <img src="images (11).jpg" alt="Namboole High School Westerners Week poster" />
+          <div class="notice-copy">
+            <h2>Westerners Week</h2>
+            <p>See the school poster for information about this cultural celebration.</p>
+          </div>
+        </article>
+        <article class="notice">
+          <img src="images (12).jpg" alt="Prayer and fasting notice" />
+          <div class="notice-copy">
+            <h2>Prayer and fasting</h2>
+            <p>Refer to the notice for details about the school's prayer and fasting activity.</p>
+          </div>
+        </article>
+        <article class="notice">
+          <img src="images (4).jpg" alt="Namboole High School performance poster" />
+          <div class="notice-copy">
+            <h2>School performance</h2>
+            <p>A performance poster shared with the Namboole High School community.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Need more information?</h2>
+        <p>
+          <a href="contact.html">Contact Namboole High School</a>
+          or <a href="drivers.html">get directions to the school</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>Namboole High School · Aspire to Inspire</p>
+        <p><a href="index.html">Join our community</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
